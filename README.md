@@ -1,3 +1,3 @@
 # SFM_Projekt
 
-Webshop
+Képregény Webshop
