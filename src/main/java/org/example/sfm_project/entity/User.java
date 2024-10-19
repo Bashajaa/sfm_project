@@ -13,15 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class User {
     @Id
-<<<<<<< HEAD
     private Integer id;
     private String name;
     private String email;
     private String phoneNumber;
-=======
-    private Long id;
-    private String name;
-    private String email;
->>>>>>> origin/dev
 }
 
