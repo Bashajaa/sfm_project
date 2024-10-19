@@ -14,4 +14,5 @@ public class Comic {
     private ComicCategory category;
     private String picture;
     private String writer;
+    private Integer price;
 }

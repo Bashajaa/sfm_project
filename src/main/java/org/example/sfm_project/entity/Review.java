@@ -9,6 +9,6 @@ import lombok.Data;
 public class Review {
     @Id
     private Integer id;
-    private Integer score;
+    private Integer rating;
     private String comment;
 }
