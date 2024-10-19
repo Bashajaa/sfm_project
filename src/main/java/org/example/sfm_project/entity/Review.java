@@ -6,13 +6,9 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Comic {
+public class Review {
     @Id
     private Integer id;
-    private String title;
-    private String description;
-    private ComicCategory category;
-    private String picture;
-    private String writer;
-
+    private Integer score;
+    private String comment;
 }
