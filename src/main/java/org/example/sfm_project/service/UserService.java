@@ -31,13 +31,13 @@ public class UserService {
         }
     }
 
-    public void delete(Integer userId){
-        if(userRepository.existsById(userId)){
-            User user= userRepository.findById(userId);
-            userRepository.delete(user);
-        }
-        else {
-            throw new RuntimeException("User not found with id: " + userId);
-        }
-    }
+//    public void delete(Integer userId){
+//        if(userRepository.existsById(userId)){
+//            User user= userRepository.findById(userId);
+//            userRepository.delete(user);
+//        }
+//        else {
+//            throw new RuntimeException("User not found with id: " + userId);
+//        }
+//    }
 }

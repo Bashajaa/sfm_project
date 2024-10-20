@@ -16,4 +16,9 @@ public class UserController {
     public void save(UserDto userDto){
         userService.save(userDto);
     }
+
+    @PostMapping("/delete/{userId}")
+    public void delete(Integer userId){
+        userService.delete(userId);
+    }
 }
