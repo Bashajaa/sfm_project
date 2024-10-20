@@ -4,6 +4,7 @@ import org.example.sfm_project.dtos.UserDto;
 import org.example.sfm_project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class UserController {
     }
 
     @PostMapping("/delete/{userId}")
-    public void delete(Integer userId){
+    public void delete(@PathVariable Integer userId){
         userService.delete(userId);
     }
 }
