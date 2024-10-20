@@ -20,4 +20,13 @@ public class ComicService {
         comic.setReleaseYear(comicDto.getReleaseYear());
         comicRepository.save(comic);
     }
+
+    public void delete(Integer comicId){
+        if(comicRepository.existsById(comicId)){
+            comicRepository.deleteById(comicId);
+        }
+        else{
+            throw new RuntimeException("Comic not found with id: " + comicId);
+        }
+    }
 }

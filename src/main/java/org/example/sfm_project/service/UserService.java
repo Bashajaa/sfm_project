@@ -21,4 +21,23 @@ public class UserService {
         user.setRegistrationDate(userDto.getRegistrationDate());
         userRepository.save(user);
     }
+
+    public void delete(Integer userId){
+        if(userRepository.existsById(userId)){
+            userRepository.deleteById(userId);
+        }
+        else {
+            throw new RuntimeException("User not found with id: " + userId);
+        }
+    }
+
+//    public void delete(Integer userId){
+//        if(userRepository.existsById(userId)){
+//            User user= userRepository.findById(userId);
+//            userRepository.delete(user);
+//        }
+//        else {
+//            throw new RuntimeException("User not found with id: " + userId);
+//        }
+//    }
 }

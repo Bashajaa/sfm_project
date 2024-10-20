@@ -16,4 +16,13 @@ public class ArtistService {
         artist.setName(artistDto.getName());
         artistRepository.save(artist);
     }
+
+    public void delete(Integer artistId){
+        if(artistRepository.existsById(artistId)){
+            artistRepository.deleteById(artistId);
+        }
+        else {
+            throw new RuntimeException("Artist not found with id: " + artistId);
+        }
+    }
 }
