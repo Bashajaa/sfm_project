@@ -3,6 +3,7 @@ package org.example.sfm_project.controller;
 import org.example.sfm_project.dtos.HistoryDto;
 import org.example.sfm_project.service.HistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,4 +14,7 @@ public class HistoryController {
 
     @PostMapping("/save")
     public void save(HistoryDto historyDto){historyService.save(historyDto);}
+
+    @PostMapping("/delete/{historyId}")
+    public void delete(@PathVariable Integer historyId){historyService.delete(historyId);}
 }

@@ -33,7 +33,7 @@ public class UserService {
 
 //    public void delete(Integer userId){
 //        if(userRepository.existsById(userId)){
-//            User user= userRepository.findById(userId);
+//            User user= userRepository.findById();
 //            userRepository.delete(user);
 //        }
 //        else {

@@ -16,4 +16,13 @@ public class HistoryService {
         history.setDate(historyDto.getDate());
         historyRepository.save(history);
     }
+
+    public void delete(Integer historyId){
+        if(historyRepository.existsById(historyId)){
+            historyRepository.deleteById(historyId);
+        }
+        else{
+            throw new RuntimeException("History not found with id: " + historyId);
+        }
+    }
 }
