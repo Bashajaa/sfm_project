@@ -17,4 +17,13 @@ public class ReviewService {
         review.setComment(reviewDto.getComment());
         reviewRepository.save(review);
     }
+
+    public void delete(Integer reviewId){
+        if(reviewRepository.existsById(reviewId)){
+            reviewRepository.deleteById(reviewId);
+        }
+        else{
+            throw new RuntimeException("Review not found with id: " + reviewId);
+        }
+    }
 }
