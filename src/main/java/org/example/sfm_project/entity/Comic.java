@@ -11,7 +11,7 @@ public class Comic {
     private Integer id;
     private String title;
     private String description;
-    private ComicCategory category;
     private String picture;
-    private String writer;
+    private Integer price;
+    private Integer releaseYear;
 }

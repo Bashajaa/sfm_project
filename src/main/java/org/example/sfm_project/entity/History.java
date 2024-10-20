@@ -4,9 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.util.Date;
+
 @Entity
 @Data
-public class Cart {
+public class History {
     @Id
     private Integer id;
+    private Date date;
 }

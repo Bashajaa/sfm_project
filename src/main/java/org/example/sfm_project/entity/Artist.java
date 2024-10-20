@@ -6,9 +6,8 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Review {
+public class Artist {
     @Id
     private Integer id;
-    private Integer rating;
-    private String comment;
+    private String name;
 }
