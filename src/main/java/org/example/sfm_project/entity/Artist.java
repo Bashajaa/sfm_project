@@ -6,12 +6,8 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Comic {
+public class Artist {
     @Id
     private Integer id;
-    private String title;
-    private String description;
-    private String picture;
-    private Integer price;
-    private Integer releaseYear;
+    private String name;
 }
