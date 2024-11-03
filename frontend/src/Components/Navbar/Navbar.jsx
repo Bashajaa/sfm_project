@@ -1,5 +1,7 @@
 import './Navbar.css'
 import React, { useState } from 'react'; 
+
+
 import cart_logo from '../Assets/cart_logo.png'
 import profil from '../Assets/profil_icon.png'
 import searchIcon from '../Assets/search_button.jpg'
@@ -28,7 +30,6 @@ export const Navbar = () => {
           <ul className='menu-list'>
             <li>All Comic</li>
             <li>Marvel</li>
-            <li>DC</li>
             <li>Star Wars</li>
             <li>European</li>
             <li>Hungarian</li>

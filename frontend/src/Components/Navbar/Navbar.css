@@ -10,7 +10,7 @@
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 40px;
     color: orange; /* szövegszín marad */
 }
 
@@ -74,7 +74,7 @@
 .nav-search {
     display: flex;
     align-items: center;
-    width: 300px; /* optimalizált szélesség */
+    width: 400px; 
     position: relative;
 }
 
@@ -110,7 +110,7 @@
 .nav-login-cart {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
     background-color: #001f3f; /* háttérszín marad */
 }
 
@@ -127,17 +127,16 @@
     cursor: pointer;
 }
 
-.nav-cart-count {
+.nav-cart-count{
     width: 22px;
     height: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -35px;
+    margin-left: -55px;
     border-radius: 11px;
     font-size: 14px;
-    background: red; /* értesítés háttérszíne marad */
-    color: white; /* értesítés szövegszíne marad */
-    position: absolute;
-    top: -5px;
-    right: -5px;
+    background:red;
+    color: white;
 }
