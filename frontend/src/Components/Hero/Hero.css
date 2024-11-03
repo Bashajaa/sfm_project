@@ -1,0 +1,140 @@
+.hero {
+    display: flex;
+    flex-direction: column; /* Változtatva, hogy egymás alatt legyenek a szekciók */
+    align-items: center; /* Középre igazítás */
+    min-height: 100vh; 
+    background: linear-gradient(to bottom, rgba(13, 27, 42, 0.9), rgba(13, 27, 42, 0.9));
+    background-size: cover; 
+    position: relative;
+    overflow: hidden; 
+    padding: 20px; /* Felső padding a tartalomnak */
+}
+
+.welcome-message {
+    font-size: 2.8em; 
+    color: #ff6f61; 
+    text-align: center;
+    margin: 20px 0; 
+    position: relative; /* Módosítva, hogy ne takarja el a tartalmat */
+    font-family: 'Luckiest Guy', sans-serif; 
+}
+
+.hero-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: rgba(255, 255, 255, 0.2); /* Átlátszó háttér */
+    padding: 20px; 
+    border-radius: 12px; 
+    color: #fff;
+    width: 90%; 
+    max-width: 1200px; 
+    position: relative;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6); 
+    height: 300px; /* Magasabb magasság */
+    backdrop-filter: blur(10px); 
+    margin-bottom: 20px; /* Alsó margó a diák alatt */
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 30px;
+    text-align: right;
+}
+
+.hero-text h1 {
+    font-size: 3.5em; 
+    color: #ff6f61; 
+    font-family: 'Bangers', sans-serif; 
+}
+
+.divider {
+    width: 8px; 
+    height: 80%; 
+    background-color: #ff6f61; 
+    margin: 0 30px; 
+}
+
+.hero-image {
+    flex: 0 0 50%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%; 
+    max-width: none; 
+    max-height: 100%; 
+    border-radius: 12px; 
+    object-fit: cover; 
+    transition: transform 0.3s ease; 
+}
+
+.hero-image img:hover {
+    transform: scale(1.05); 
+}
+
+/* Új szekciók stílusai */
+.featured-products,
+.categories,
+.top-rated {
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 20px 0; /* Felső és alsó margó a szekciók között */
+    background-color: rgba(255, 255, 255, 0.1); /* Átlátszó háttér a szekciókhoz */
+    border-radius: 12px; 
+    padding: 20px; 
+    color: #fff;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4); 
+}
+
+.featured-products h3,
+.categories h3,
+.top-rated h3 {
+    margin-bottom: 15px; 
+    color: #ff6f61; 
+}
+
+.product-cards,
+.category-cards {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; /* Kártyák közötti tér */
+}
+
+.product-card,
+.category-card {
+    flex: 1 1 30%; /* Kártyák szélessége */
+    margin: 10px; 
+    background-color: rgba(255, 255, 255, 0.2); /* Kártyák háttere */
+    border-radius: 8px; 
+    padding: 10px; 
+    text-align: center; 
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.product-card img,
+.category-card img {
+    max-width: 100%; 
+    border-radius: 8px; 
+}
+
+.top-rated ul {
+    list-style: none; 
+    padding: 0; 
+}
+
+.top-rated li {
+    display: flex; 
+    align-items: center; 
+    margin: 10px 0; 
+}
+
+.top-rated img {
+    width: 50px; 
+    height: 50px; 
+    margin-right: 10px; 
+}
