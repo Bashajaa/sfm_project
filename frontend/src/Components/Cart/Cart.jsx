@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import tresh_can from '../Assets/tresh_can.jpg';
+import "./Cart.css"
 
 export const Cart = () =>
 {
