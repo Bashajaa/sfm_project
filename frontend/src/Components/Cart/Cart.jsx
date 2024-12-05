@@ -34,6 +34,27 @@ export const Cart = () =>
         }
     };
 
+    const handleRemoveFromCart = product =>
+    {
+        const existingItem = cartItems.find(item => item.product.id === product.id);
+
+        if (!existingItem)
+        {
+            return;
+        }
+
+        if (existingItem.quantity <= 1)
+        {
+            setCartItems(cartItems.filter(item => item.product.id !== product.id));
+        }
+        else
+        {
+            setCartItems(cartItems.map(item =>
+                item.product.id === product.id ? { ...item, quantity: item.quantity - 1 } : item
+            ));
+        }
+    };
+
     useEffect(() => {
         const calculateTotal = () => {
             const total = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
@@ -63,7 +84,10 @@ export const Cart = () =>
                             <td className="cart-item">{product.name}</td>
                             <td className="cart-item">{product.price} Ft</td>
                             <td className="cart-item">
-                                <button>
+                                <button
+                                    className="remove-button"
+                                    onClick={() => handleRemoveFromCart(product)}
+                                >
                                     -
                                 </button>
                                 <input
