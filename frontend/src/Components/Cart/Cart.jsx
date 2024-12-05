@@ -96,12 +96,11 @@ export const Cart = () =>
                                 >
                                     -
                                 </button>
-                                <input
-                                    type="number"
-                                    className="input"
-                                    value={cartItem ? cartItem.quantity : 0}
-                                    readOnly
-                                />
+
+                                <output>
+                                    {cartItem ? cartItem.quantity : 0}
+                                </output>
+
                                 <button
                                     className="add-button"
                                     onClick={() => handleAddToCart(product)}
