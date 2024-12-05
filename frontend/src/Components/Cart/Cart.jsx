@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 export const Cart = () =>
 {
     const [products, setProducts] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
+    const [total, setTotal] = useState(0);
 
     useEffect(() =>
         {
@@ -16,6 +18,29 @@ export const Cart = () =>
         },
         []);
 
+    const handleAddToCart = product =>
+    {
+        const existingItem = cartItems.find(item => item.product.id === product.id);
+
+        if (existingItem)
+        {
+            setCartItems(cartItems.map(item =>
+                item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+            ));
+        }
+        else
+        {
+            setCartItems([...cartItems, { product, quantity: 1 }]);
+        }
+    };
+
+    useEffect(() => {
+        const calculateTotal = () => {
+            const total = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+            setTotal(total);
+        };
+        calculateTotal();
+    }, [cartItems]);
 
     return (
         <div className="cart-container">
@@ -32,6 +57,7 @@ export const Cart = () =>
                 </thead>
                 <tbody>
                 {products.map(product => {
+                    const cartItem = cartItems.find(item => item.product.id === product.id);
                     return (
                         <tr key={product.id}>
                             <td className="cart-item">{product.name}</td>
@@ -43,15 +69,19 @@ export const Cart = () =>
                                 <input
                                     type="number"
                                     className="input"
+                                    value={cartItem ? cartItem.quantity : 0}
                                     readOnly
                                 />
-                                <button>
+                                <button
+                                    className="add-button"
+                                    onClick={() => handleAddToCart(product)}
+                                >
                                     +
                                 </button>
 
                             </td>
                             <td className="cart-item">
-                                Ft
+                                {cartItem ? cartItem.quantity * product.price : 0} Ft
                             </td>
                             <td className="cart-item">
                                 <button>
@@ -63,7 +93,7 @@ export const Cart = () =>
                 })}
                 </tbody>
             </table>
-            <h2 className="total-amount">Összesen: Ft</h2>
+            <h2 className="total-amount">Összesen: {total} Ft</h2>
         </div>
     );
 
