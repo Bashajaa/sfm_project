@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import tresh_can from '../Assets/tresh_can.jpg';
 
 export const Cart = () =>
 {
@@ -55,6 +56,10 @@ export const Cart = () =>
         }
     };
 
+    const handleDeleteFromCart = product => {
+        setCartItems(cartItems.filter(item => item.product.id !== product.id));
+    };
+
     useEffect(() => {
         const calculateTotal = () => {
             const total = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
@@ -108,9 +113,13 @@ export const Cart = () =>
                                 {cartItem ? cartItem.quantity * product.price : 0} Ft
                             </td>
                             <td className="cart-item">
-                                <button>
-                                    Törlés
-                                </button>
+                                <img
+                                    src={tresh_can}
+                                    className="tresh"
+                                    alt="Delete"
+                                    onClick={() => handleDeleteFromCart(product)}
+                                    style={{ cursor: "pointer" }}
+                                />
                             </td>
                         </tr>
                     );
