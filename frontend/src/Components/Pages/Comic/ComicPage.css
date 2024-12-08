@@ -1,0 +1,118 @@
+.comic-detail-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+  }
+  
+  .comic-detail {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comic-image img {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .comic-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .comic-info h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .comic-info p {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .quantity-control button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #28a745;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .quantity-control button:hover {
+    background-color: #218838;
+  }
+  
+  .quantity-control span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -5px;
+  }
+  
+  .cart-button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #28a745;
+    width: 45px;
+    height: 45px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cart-button img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .cart-button:hover {
+    background-color: #218838;
+  }
+  
+  @media (max-width: 768px) {
+    .comic-detail {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .comic-image img {
+      max-width: 300px;
+    }
+  
+    .comic-info {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  
