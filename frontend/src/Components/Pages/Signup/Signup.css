@@ -51,7 +51,7 @@
   }
   
   h2 {
-    color: #ff6f61;
+    color: #ff6f61 !important;
     font-size: 2.5em;
     margin-bottom: 20px;
     font-family: 'Bangers', sans-serif;

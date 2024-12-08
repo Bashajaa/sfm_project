@@ -103,18 +103,21 @@
     transition: border 0.3s;
 }
 
-.nav-search input:focus {
-    border-color: #ff6f61;
-    outline: none;
-    box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+.search-button:focus {
+    outline: none; 
+    background: none !important;
 }
 
 .search-button {
     position: absolute;
     right: -180px;
-    background: none;
+    background: none !important;
     border: none;
     cursor: pointer;
+    outline: none;
+}
+.search-button:active {
+    background: none !important;
 }
 
 .search-button img {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";  // Importáljuk az axios-t
+import axios from "axios"; 
 import "./Signup.css";
 
 function Signup() {
@@ -37,7 +37,7 @@ function Signup() {
 
     try {
       if (isLogin) {
-        // Login kérés küldése a backendhez axios-szal
+       
         const response = await axios.post("https://localhost:8080/user", {
           email: formData.email,
           password: formData.password,
@@ -52,12 +52,12 @@ function Signup() {
           alert("Invalid email or password!");
         }
       } else {
-        // Regisztráció kérés küldése a backendhez axios-szal
+        
         const response = await axios.post("https://localhost:8080/save/user", formData);
 
         if (response.status === 200) {
           alert("Registration successful! You can now log in.");
-          setIsLogin(true); // Váltás login módba
+          setIsLogin(true); 
         } else {
           alert("Registration failed. Please try again.");
         }
