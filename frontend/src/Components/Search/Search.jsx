@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {useNavigate} from "react-router-dom";
+import "./Search.css"
 
 const SearchableList = () => {
     const [searchTerm, setSearchTerm] = useState("");
