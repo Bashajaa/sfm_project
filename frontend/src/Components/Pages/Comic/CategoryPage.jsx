@@ -1,46 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';  
-import './pagesytle.css';
-import cartlogo from '../Components/Assets/cart_logo.png';
+import './CategoryPage.css';
+import cartlogo from '../../Assets/cart_logo.png';
 
 const CategoryPage = () => {
-  const { categoryName } = useParams();  
+  const { categoryName } = useParams();
   const [comics, setComics] = useState([]);
-  const [loading, setLoading] = useState(true); 
-  const [error, setError] = useState(null); 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true); 
-    setError(null); 
+    setLoading(true);
+    setError(null);
 
     const fetchComics = async () => {
       try {
-        const response = await axios.get(`https://localhost:8080/api/comics${categoryName !== 'All-Comic' ? `?category=${categoryName}` : ''}`);
-        setComics(response.data); 
+        const url = `https://localhost:8080/api/comics${categoryName !== 'All-Comic' ? `?category=${categoryName}` : ''}`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          throw new Error('Hiba történt a képregények betöltésekor'); // Hiba kezelés
+        }
+
+        const data = await response.json();
+        setComics(data);
       } catch (error) {
-        setError('Hiba történt a képregények betöltésekor'); 
+        setError('Hiba történt a képregények betöltésekor');
       } finally {
-        setLoading(false); 
+        setLoading(false);
       }
     };
 
-    fetchComics(); 
+    fetchComics();
 
-  }, [categoryName]); 
+  }, [categoryName]);
 
   return (
     <div className="category-page">
       <h2>{categoryName === 'All-Comic' ? 'All Comics' : categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h2>
-      
+
       {loading ? (
-        <p>Loading...</p> 
+        <p>Loading...</p>
       ) : error ? (
         <p>{error}</p>
       ) : (
         <div className="comics-list">
           {comics.length === 0 ? (
-            <p>No comics found.</p> 
+            <p>No comics found.</p>
           ) : (
             comics.map((comic) => (
               <div key={comic.id} className="comic-item">
