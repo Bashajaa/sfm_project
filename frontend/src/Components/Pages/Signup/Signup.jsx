@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";  // Importáljuk az axios-t
 import "./Signup.css";
 
 function Signup() {
@@ -36,20 +37,14 @@ function Signup() {
 
     try {
       if (isLogin) {
-        // Login kérés küldése a backendhez
-        const response = await fetch("https://localhost:8080/user", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: formData.email,
-            password: formData.password,
-          }),
+        // Login kérés küldése a backendhez axios-szal
+        const response = await axios.post("https://localhost:8080/user", {
+          email: formData.email,
+          password: formData.password,
         });
 
-        if (response.ok) {
-          const user = await response.json();
+        if (response.status === 200) {
+          const user = response.data;
           localStorage.setItem("role", user.role);
           alert(user.role === "admin" ? "Admin login successful!" : "User login successful!");
           navigate(user.role === "admin" ? "/admin" : "/");
@@ -57,16 +52,10 @@ function Signup() {
           alert("Invalid email or password!");
         }
       } else {
-        // Regisztráció kérés küldése a backendhez
-        const response = await fetch("https://localhost:8080/save/user", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        // Regisztráció kérés küldése a backendhez axios-szal
+        const response = await axios.post("https://localhost:8080/save/user", formData);
 
-        if (response.ok) {
+        if (response.status === 200) {
           alert("Registration successful! You can now log in.");
           setIsLogin(true); // Váltás login módba
         } else {
@@ -78,7 +67,8 @@ function Signup() {
     } finally {
       setLoading(false);
     }
-  }; 
+  };
+
   return (
     <div className="signup-container">
       <h2>{isLogin ? "Login" : "Sign Up"}</h2>
@@ -117,7 +107,6 @@ function Signup() {
             {isLogin ? "Sign Up!" : "Login!"}
           </a>
         </p>
-    
       </div>
     </div>
   );

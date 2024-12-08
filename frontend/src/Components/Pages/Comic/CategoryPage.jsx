@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import axios from 'axios';  
 import './CategoryPage.css';
 import cartlogo from '../../Assets/cart_logo.png';
 
@@ -16,16 +17,11 @@ const CategoryPage = () => {
     const fetchComics = async () => {
       try {
         const url = `https://localhost:8080/api/comics${categoryName !== 'All-Comic' ? `?category=${categoryName}` : ''}`;
-        const response = await fetch(url);
+        const response = await axios.get(url); // Use axios to fetch data
 
-        if (!response.ok) {
-          throw new Error('Hiba történt a képregények betöltésekor'); // Hiba kezelés
-        }
-
-        const data = await response.json();
-        setComics(data);
+        setComics(response.data);  // Set comics data
       } catch (error) {
-        setError('Hiba történt a képregények betöltésekor');
+        setError('Hiba történt a képregények betöltésekor');  // Handle error
       } finally {
         setLoading(false);
       }

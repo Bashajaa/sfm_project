@@ -5,6 +5,7 @@ import { Home } from './Components/Pages/Home';
 import Signup from './Components/Pages/Signup/Signup';
 import CategoryPage from './Components/Pages/Comic/CategoryPage';
 import { ComicPage } from './Components/Pages/Comic/ComicPage';
+import OrderPage from './Components/Pages/OrderPage';
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/login' element={<Signup/>}/>
         <Route path="/category/:categoryName" element={<CategoryPage/>}/>
         <Route path='/comic/:comicId' element={<ComicPage/>}/>
+        <Route path='orders' element={<OrderPage/>}/>
       </Routes>
     </BrowserRouter>
   </div> 
