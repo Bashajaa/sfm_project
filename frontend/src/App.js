@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './Components/Pages/Home';
 import Signup from './Components/Pages/Signup/Signup';
 import CategoryPage from './Components/Pages/Comic/CategoryPage';
+import { ComicPage } from './Components/Pages/Comic/ComicPage';
 
 
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Signup/>}/>
         <Route path="/category/:categoryName" element={<CategoryPage/>}/>
+        <Route path='/comic/:comicId' element={<ComicPage/>}/>
       </Routes>
     </BrowserRouter>
   </div> 
