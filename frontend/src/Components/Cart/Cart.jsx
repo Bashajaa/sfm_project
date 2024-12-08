@@ -45,20 +45,23 @@ export const Cart = () =>
             return;
         }
 
-        if (existingItem.quantity <= 1)
+        if (existingItem.quantity === 1)
         {
-            setCartItems(cartItems.filter(item => item.product.id !== product.id));
+            return;
         }
-        else
-        {
-            setCartItems(cartItems.map(item =>
-                item.product.id === product.id ? { ...item, quantity: item.quantity - 1 } : item
-            ));
-        }
+
+        setCartItems(cartItems.map(
+            item => item.product.id === product.id ? { ...item, quantity: item.quantity - 1 } : item
+        ));
     };
 
     const handleDeleteFromCart = product => {
-        setCartItems(cartItems.filter(item => item.product.id !== product.id));
+        const confirmDelete = window.confirm(`Biztosan törölni szeretnéd a "${product.name}" terméket?`);
+
+        if (confirmDelete) {
+            setProducts(products.filter(item => item.id !== product.id));
+            setCartItems(cartItems.filter(item => item.product.id !== product.id));
+        }
     };
 
     useEffect(() => {
