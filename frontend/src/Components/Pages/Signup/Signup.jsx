@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./signup.css";
+import "./Signup.css";
 
 function Signup() {
   const [isLogin, setIsLogin] = useState(true);
@@ -52,7 +52,7 @@ function Signup() {
           const user = await response.json();
           localStorage.setItem("role", user.role);
           alert(user.role === "admin" ? "Admin login successful!" : "User login successful!");
-          navigate(user.role === "admin" ? "/admin" : "/dashboard");
+          navigate(user.role === "admin" ? "/admin" : "/");
         } else {
           alert("Invalid email or password!");
         }
@@ -117,14 +117,7 @@ function Signup() {
             {isLogin ? "Sign Up!" : "Login!"}
           </a>
         </p>
-        {/* Admin link hozzáadása a login űrlaphoz */}
-        {isLogin && (
-          <p>
-            <a href="/admin" className="admin-link">
-              Go to Admin Page
-            </a>
-          </p>
-        )}
+    
       </div>
     </div>
   );
