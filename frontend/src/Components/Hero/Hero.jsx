@@ -34,14 +34,6 @@ export const Hero = () => {
       </div>
     </div>
 
-    <section className="featured-products">
-        <h3>Featured Comics</h3>
-      </section>
-
-      
-      <section className="top-rated">
-        <h3>Popular Comics</h3>
-      </section>
     </div>
   )
 }
