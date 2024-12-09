@@ -7,7 +7,7 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class HistoryDtoTeszt {
+class HistoryDtoTest {
 
     @Test
     void testGettersAndSetters() {

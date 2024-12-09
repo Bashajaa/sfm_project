@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ArtistDtoTeszt {
+public class ArtistDtoTest {
     @Test
     void testArtistDtoGettersAndSetters() {
         ArtistDto artistDto = new ArtistDto();
