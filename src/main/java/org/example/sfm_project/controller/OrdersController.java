@@ -11,6 +11,6 @@ public class OrdersController {
     @Autowired
     private HistoryService historyService;
 
-    @PostMapping("/save")
+    @PostMapping("/saveOrders")
     public void save(OrdersDto ordersDto){historyService.save(ordersDto);}
 }

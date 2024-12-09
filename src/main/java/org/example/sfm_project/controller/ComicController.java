@@ -12,9 +12,9 @@ public class ComicController {
     @Autowired
     private ComicService comicService;
 
-    @PostMapping("/save")
+    @PostMapping("/saveComic")
     public void save(ComicDto comicDto){comicService.save(comicDto);}
 
-    @PostMapping("/delete/{comicId}")
+    @PostMapping("/deleteComic/{comicId}")
     public void delete(@PathVariable Integer comicId){comicService.delete(comicId);}
 }

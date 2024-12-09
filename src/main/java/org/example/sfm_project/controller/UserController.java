@@ -13,12 +13,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/save")
+    @PostMapping("/saveUser")
     public void save(UserDto userDto){
         userService.save(userDto);
     }
 
-    @PostMapping("/delete/{userId}")
+    @PostMapping("/deleteUser/{userId}")
     public void delete(@PathVariable Integer userId){
         userService.delete(userId);
     }

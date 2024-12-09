@@ -12,9 +12,9 @@ public class AuthorController {
     @Autowired
     private ArtistService artistService;
 
-    @PostMapping("/save")
+    @PostMapping("/saveAuthor")
     public void save(AuthorDto authorDto){artistService.save(authorDto);}
 
-    @PostMapping("/delete/{artistId}")
+    @PostMapping("/deleteAuthor/{authortId}")
     public void delete(@PathVariable Integer artistId){artistService.delete(artistId);}
 }
