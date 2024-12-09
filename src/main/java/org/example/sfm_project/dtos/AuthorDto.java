@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ArtistDto {
+public class AuthorDto {
     private String name;
 }

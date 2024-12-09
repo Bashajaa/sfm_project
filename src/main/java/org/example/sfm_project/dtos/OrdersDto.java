@@ -7,6 +7,9 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class HistoryDto {
+public class OrdersDto {
     private Date date;
+    private Integer totalPrice;
+    private String status;
+
 }

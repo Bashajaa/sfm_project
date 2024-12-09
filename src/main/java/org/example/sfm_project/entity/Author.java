@@ -4,12 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-import java.util.Date;
-
 @Entity
 @Data
-public class History {
+public class Author {
     @Id
     private Integer id;
-    private Date date;
+    private String name;
 }

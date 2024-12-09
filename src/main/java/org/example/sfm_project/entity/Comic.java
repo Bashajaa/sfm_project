@@ -10,8 +10,8 @@ public class Comic {
     @Id
     private Integer id;
     private String title;
-    private String description;
-    private String picture;
     private Integer price;
-    private Integer releaseYear;
+    private String description;
+    private String image_url;
+    private Integer release_date;
 }

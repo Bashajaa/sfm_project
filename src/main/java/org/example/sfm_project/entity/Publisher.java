@@ -4,14 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-import java.util.Date;
-
 @Entity
 @Data
-public class Review {
+public class Publisher {
     @Id
     private Integer id;
-    private Integer rating;
-    private String comment;
-    private Date created_at;
+    private String name;
 }

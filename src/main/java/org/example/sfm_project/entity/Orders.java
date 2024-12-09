@@ -4,10 +4,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.util.Date;
+
 @Entity
 @Data
-public class Artist {
+public class Orders {
     @Id
     private Integer id;
-    private String name;
+    private Date orderDate;
+    private Integer totalPrice;
+    private String status;
 }
