@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,7 +19,7 @@ public class UserController {
         userService.save(userDto);
     }
 
-    @PostMapping("/deleteUser/{userId}")
+    @DeleteMapping("/deleteUser/{userId}")
     public void delete(@PathVariable Integer userId){
         userService.delete(userId);
     }
