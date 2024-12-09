@@ -11,6 +11,6 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
-    @PostMapping("/save")
+    @PostMapping("/saveReview")
     public void save(ReviewDto reviewDto){reviewService.save(reviewDto);}
 }

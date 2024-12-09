@@ -1,20 +1,23 @@
 package org.example.sfm_project.controller;
 
 import org.example.sfm_project.dtos.AuthorDto;
-import org.example.sfm_project.service.ArtistService;
+import org.example.sfm_project.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AuthorController {
     @Autowired
-    private ArtistService artistService;
+    private AuthorService authorService;
 
-    @PostMapping("/save")
-    public void save(AuthorDto authorDto){artistService.save(authorDto);}
+    @PostMapping("/saveAuthor")
+    public void save(AuthorDto authorDto){
+        authorService.save(authorDto);}
 
-    @PostMapping("/delete/{artistId}")
-    public void delete(@PathVariable Integer artistId){artistService.delete(artistId);}
+    @DeleteMapping("/deleteAuthor/{authortId}")
+    public void delete(@PathVariable Integer artistId){
+        authorService.delete(artistId);}
 }
